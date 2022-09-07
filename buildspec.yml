@@ -4,9 +4,9 @@ phases:
   install:
     runtime-versions:
       python: 3.10
-  pre_build:
-    commands:
-      - apt-get install -y python3-venv
+  #pre_build:
+  #  commands:
+  #    - apt-get install -y python3-venv
   build:
     commands:
       - python Python/test.py
