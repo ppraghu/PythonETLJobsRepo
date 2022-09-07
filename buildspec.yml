@@ -9,4 +9,4 @@ phases:
       - apt-get install -y python3-venv
   build:
     commands:
-      - python test.py
+      - python Python/test.py
