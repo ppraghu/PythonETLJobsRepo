@@ -1,12 +1,23 @@
 version: 0.2
 
+env:
+  parameter-store:
+    SONARQUBE_TOKEN: "sqp_0120f340c986a0f9293ff328557be9c8c1df1b56"
+    SONARQUBE_ENDPOINT: "http://ec2-52-32-225-35.us-west-2.compute.amazonaws.com:9000"
+
+
 phases:
   install:
     runtime-versions:
       python: 3.10
+    commands:
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
+      - unzip sonar-scanner-cli-3.3.0.1492-linux.zip
+      - export PATH=$PATH:./sonar-scanner-3.3.0.1492-linux/bin/
   #pre_build:
   #  commands:
   #    - apt-get install -y python3-venv
   build:
     commands:
-      - python Python/test.py
+       - sonar-scanner
+    #  - python Python/test.py
