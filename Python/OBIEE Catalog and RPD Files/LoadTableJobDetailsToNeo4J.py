@@ -82,12 +82,12 @@ def populateRelationships(session, jobTableRelationSet):
 
 def connectToNeo4J():
     neo4jURI = "bolt://localhost:7687"
-    driver = GraphDatabase.driver(neo4jURI, auth=("neo4j", "netapp"));
+    driver = GraphDatabase.driver(neo4jURI, auth=("neo4jxx", "xxxyyyy"));
 
 def main():
     data = loadSchemaTableJobDetailsCsv();
     neo4jURI = "bolt://localhost:7687"
-    driver = GraphDatabase.driver(neo4jURI, auth=("neo4j", "netapp"));
+    driver = GraphDatabase.driver(neo4jURI, auth=("neo4jxx", "xxxyyyy"));
     tableSet, jobSet, jobTableRelationSet = createSets(data);
     #populateTableNodes(driver, tableSet);
     with driver.session() as session:
