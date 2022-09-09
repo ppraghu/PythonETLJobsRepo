@@ -11,11 +11,9 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
-      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
-      - unzip sonar-scanner-cli-4.7.0.2747-linux.zip
-      - export PATH=$PATH:./sonar-scanner-4.7.0.2747-linux/bin/
-      - chmod 777 ./sonar-scanner-4.7.0.2747-linux/jre/bin/java
-      - ./sonar-scanner-4.7.0.2747-linux/jre/bin/java -version
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747.zip
+      - unzip sonar-scanner-cli-4.7.0.2747.zip
+      - export PATH=$PATH:./sonar-scanner-4.7.0.2747/bin/
   #pre_build:
   #  commands:
   #    - apt-get install -y python3-venv
