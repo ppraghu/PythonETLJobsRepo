@@ -1,9 +1,9 @@
 version: 0.2
 
-env:
-  parameter-store:
-    SONARQUBE_TOKEN: "sqp_0120f340c986a0f9293ff328557be9c8c1df1b56"
-    SONARQUBE_ENDPOINT: "http://ec2-52-32-225-35.us-west-2.compute.amazonaws.com:9000"
+#env:
+#  parameter-store:
+#    SONARQUBE_TOKEN: "sqp_0120f340c986a0f9293ff328557be9c8c1df1b56"
+#    SONARQUBE_ENDPOINT: "http://ec2-52-32-225-35.us-west-2.compute.amazonaws.com:9000"
 
 
 phases:
@@ -19,5 +19,5 @@ phases:
   #    - apt-get install -y python3-venv
   build:
     commands:
-       - sonar-scanner
+       - sonar-scanner -Dsonar.projectKey=ppraghu_PythonETLJobsRepo_AYMdSChx_6m7NtY5d-tG -Dsonar.sources=. -Dsonar.host.url=http://ec2-52-32-225-35.us-west-2.compute.amazonaws.com:9000
     #  - python Python/test.py
