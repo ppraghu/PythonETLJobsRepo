@@ -14,6 +14,8 @@ phases:
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
       - unzip sonar-scanner-cli-4.7.0.2747-linux.zip
       - export PATH=$PATH:./sonar-scanner-4.7.0.2747-linux/bin/
+      - chmod 777 ./sonar-scanner-4.7.0.2747-linux/jre/bin/java
+      - ./sonar-scanner-4.7.0.2747-linux/jre/bin/java -version
   #pre_build:
   #  commands:
   #    - apt-get install -y python3-venv
