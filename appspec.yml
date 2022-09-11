@@ -5,3 +5,5 @@ files:
     destination: /home/ec2-user/python_deployment/Python
   - source: sample_flask_site
     destination: /home/ec2-user/python_deployment/sample_flask_site
+
+file_exists_behavior: OVERWRITE
