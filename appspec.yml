@@ -1,0 +1,5 @@
+version: 0.0
+os: linux
+files:
+  - source: Python
+    destination: /home/ec2-user/python_deployment/Python
