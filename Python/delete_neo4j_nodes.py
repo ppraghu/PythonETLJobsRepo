@@ -1,6 +1,6 @@
 from neo4j import GraphDatabase
 
-nodesList = [
+nodes_list = [
 "OBIEEReport",
 "CatalogLayerColumn",
 "PresentationColumn",
@@ -10,15 +10,14 @@ nodesList = [
 ];
 
 def main():
-    neo4jURI = "bolt://localhost:7687"
-    driver = GraphDatabase.driver(neo4jURI, auth=("neo4j", "netapp"));
+    neo4j_uri = "bolt://localhost:7687"
+    driver = GraphDatabase.driver(neo4j_uri, auth=("neo4j", "netapp"));
     session = driver.session();
-    for nodeLabel in nodesList:
-        print("Deleting node(s) with label " + nodeLabel);
-        #deleteStmt = "MATCH (n:QuoteSalesRepSplit {quoteNumber: "12345"}) DETACH DELETE n"
-        deleteStmt = "MATCH (n:" + nodeLabel + ") DETACH DELETE n";
-        print("\tExecuting [" + deleteStmt + "]");
-        session.run(deleteStmt);
+    for node_label in nodes_list:
+        print("Deleting node(s) with label " + node_label);
+        delete_stmt = "MATCH (n:" + node_label + ") DETACH DELETE n";
+        print("\tExecuting [" + delete_stmt + "]");
+        session.run(delete_stmt);
 
 if __name__== "__main__":
     main()
