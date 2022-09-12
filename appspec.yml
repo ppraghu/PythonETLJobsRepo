@@ -16,7 +16,7 @@ permissions:
 file_exists_behavior: OVERWRITE
 
 hooks:
-  ApplicationStart:
-    - location: Python/s3_copy.py
+  ValidateService:
+    - location: /home/ec2-user/python_deployment/Python/s3_copy.py
       timeout: 120
       runas: root
