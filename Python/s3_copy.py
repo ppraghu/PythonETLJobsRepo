@@ -8,7 +8,7 @@ now = datetime.now()
 
 # Define the input file name and the output file name
 date_time = now.strftime("%Y-%b-%d_%H.%M.%S")
-output_filename = 'destination_data/output_data_file.csv.' + date_time;
+output_filename = 'destination_data/output_data_file.' + date_time + '.csv';
 input_filename = 'source_data/input_data_file.csv'
 
 #Creating Session With Boto3.
