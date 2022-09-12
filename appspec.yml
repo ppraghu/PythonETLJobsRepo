@@ -7,3 +7,9 @@ files:
     destination: /home/ec2-user/python_deployment/sample_flask_site
 
 file_exists_behavior: OVERWRITE
+
+hooks:
+  ApplicationStart:
+    - location: python /home/ec2-user/python_deployment/Python/s3_copy.py
+      timeout: 120
+      runas: root
