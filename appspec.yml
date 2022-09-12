@@ -6,10 +6,14 @@ files:
   - source: sample_flask_site
     destination: /home/ec2-user/python_deployment/sample_flask_site
 
+permissions:
+  - object: /home/ec2-user/python_deployment/Python
+    pattern: "s3_copy.py"
+  
 file_exists_behavior: OVERWRITE
 
 hooks:
   ApplicationStart:
-    - location: python /home/ec2-user/python_deployment/Python/s3_copy.py
+    - location: /Python/s3_copy.py
       timeout: 120
       runas: root
