@@ -1,10 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: Python
-    destination: /home/ec2-user/python_deployment/Python
-  - source: sample_flask_site
-    destination: /home/ec2-user/python_deployment/sample_flask_site
+  - source: /
+    destination: /home/ec2-user/python_deployment
 
 permissions:
   - object: Python
@@ -25,6 +23,6 @@ hooks:
     - location: scripts/install_packages.sh
       runas: root
   ValidateService:
-    - location: /Python/s3_copy.py
-      timeout: 120
+    - location: scripts/run_s3_copy.sh
+      timeout: 720
       runas: root
