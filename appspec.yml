@@ -12,10 +12,18 @@ permissions:
     mode: 755
     type:
       - file
+  - object: scripts
+    pattern: "install_packages.sh"
+    mode: 755
+    type:
+      - file
   
 file_exists_behavior: OVERWRITE
 
 hooks:
+  BeforeInstall:
+    - location: scripts/install_packages.sh
+      runas: root
   ValidateService:
     - location: /Python/s3_copy.py
       timeout: 120
