@@ -10,8 +10,8 @@ nodes_list = [
 ];
 
 def main():
-    neo4j_uri = "bolt://localhost:7687"
-    driver = GraphDatabase.driver(neo4j_uri, auth=("neo4j", "netapp"));
+    neo4jURI = "bolt://localhost:7687"
+    driver = GraphDatabase.driver(neo4jURI, auth=("neo4j", "netapp"));
     session = driver.session();
     for node_label in nodes_list:
         print("Deleting node(s) with label " + node_label);
