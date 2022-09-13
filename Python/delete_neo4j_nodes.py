@@ -10,7 +10,7 @@ nodes_list = [
 ];
 
 def main():
-    url = "http://ec2-52-32-225-35.us-west-2.compute.amazonaws.com:9000/"
+    url = "https://ec2-52-32-225-35.us-west-2.compute.amazonaws.com:9000/"
     driver = GraphDatabase.driver(url, auth=("neo4j", "xxyyzz"));
     session = driver.session();
     for node_label in nodes_list:
